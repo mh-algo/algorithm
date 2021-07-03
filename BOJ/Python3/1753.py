@@ -22,8 +22,9 @@ def dijkstra(start):
       if distance[nv]>next:
         distance[nv]=next
         heapq.heappush(queue,(next,nv))
+  return distance
 
-dijkstra(K)
+distance=dijkstra(K)
 for i in distance[1:]:
   if i==float('inf'):print('INF')
   else:print(i)
