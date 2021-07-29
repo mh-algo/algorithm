@@ -19,7 +19,57 @@ for _ in range(t):
 	else:
 		print('YES')
 
+		
+		
 '''
-Trie로 풀 수 있다고 하니 공부 후 추가할 예정
-참고: https://alpyrithm.tistory.com/72
+아래는 Trie로 푼 경우
 '''
+
+import sys
+input=sys.stdin.readline
+
+class Node:
+	def __init__(self,key,data=None):
+		self.key=key
+		self.data=data
+		self.children={}
+
+class Trie:
+	def __init__(self):
+		self.head=Node(None)
+		
+	def insert(self,string):
+		curr_node=self.head
+		for s in string:
+			if s not in curr_node.children:
+				curr_node.children[s]=Node(s)
+			curr_node=curr_node.children[s]
+		curr_node.data=string
+
+	def search(self,string):
+		curr_node=self.head
+		for s in string:
+			curr_node=curr_node.children[s]
+		if curr_node.children:
+			return False
+		else:
+			return True
+
+t=int(input())
+for _ in range(t):
+	n=int(input())
+	arr=[]
+	trie=Trie()
+	for _ in range(n):
+		s=input().strip()
+		arr.append(s)
+		trie.insert(s)
+	success=True
+	for s in arr:
+		success=trie.search(s)
+		if not success:
+			break
+	if success:
+		print('YES')
+	else:
+		print('NO')
