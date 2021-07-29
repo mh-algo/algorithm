@@ -30,7 +30,7 @@ class Trie:
     
     
     
-# ex.
+# ex
 trie=Trie()
 trie.insert('hello')
 trie.insert('hell')
