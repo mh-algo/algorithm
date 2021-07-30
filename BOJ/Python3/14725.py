@@ -30,5 +30,5 @@ tree=Tree()
 n=int(input())
 for _ in range(n):
 	k=input().split()
-	tree.insert(k[1:])
+	tree.insert(k[1:])	# 트리에 숫자를 제외한 배열 삽입
 tree_print(tree.head)
