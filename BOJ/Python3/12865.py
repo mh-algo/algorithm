@@ -9,8 +9,9 @@ def max_value(arr):
 	for i in range(1,n+1):
 		for j in range(1,k+1):
 			w=arr[i-1][0]
+			v=arr[i-1][1]
 			if w<=j:
-				bag[i][j]=max(bag[i-1][j],bag[i-1][j-w]+arr[i-1][1])
+				bag[i][j]=max(bag[i-1][j],bag[i-1][j-w]+v)
 			else:
 				bag[i][j]=bag[i-1][j]
 	return bag[n][k]
