@@ -12,6 +12,7 @@ def square_matrix_mul(a,b):
 			arr[i][j]%=p
 	return arr
 
+# 행렬의 n 제곱 계산
 def matrix_pow(arr,n):
 	if n==1:
 		return arr
@@ -23,6 +24,7 @@ def matrix_pow(arr,n):
 		else:
 			return square_matrix_mul(mul,arr)
 
+# 피보나치 수열
 def fibo(n):
 	arr=[[1,1],[1,0]]
 	if n==0:
@@ -31,3 +33,7 @@ def fibo(n):
 	return ret[0][1]
 
 print(fibo(n))
+
+
+# 풀이 아이디어 참고
+# https://richwind.co.kr/3
